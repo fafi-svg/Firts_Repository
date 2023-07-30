@@ -7,6 +7,9 @@
 body{
     font-family: 'Epilogue', sans-serif;
 }
+.user-select-none{
+    user-select: none;
+}
 /*________________________________________ HEADER START ________________________________________*/
 header{
     display: flex;
@@ -20,21 +23,70 @@ header{
     height: 0;
     width: 0;
 }
-.nav-menu{
+.nav{
     overflow: hidden;
+    color: hsl(0, 0%, 41%);
     z-index: 10;
-    width: 0;
+    width: 0px;
     top: 0;
     right: 0;
     position: absolute;
     background-color: white;
     height: 100vh;
     transition: width 0s ease-in-out;
+    
 }
-
-#menu_checkbox:checked ~ nav.nav-menu{
-    padding: 20px;
-    padding-top: 50px;
+/*______________________ MENU-LAYOUT STAR ______________________*/
+.nav-content{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.nav-menu .option_menu{
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+}
+.nav-menu{
+    display: grid;
+    gap: 20px;
+}
+.menu_button{
+    text-align: center;
+    display: grid;
+    gap: 5px;
+}
+.menu_button .button{
+    padding: 15px 0;
+}
+.radio_menu_button_register:checked ~ #button_register ,
+.radio_menu_button_login:checked ~ #button_login{
+    border: 1px solid;
+    border-radius: 15px;
+}
+/*______________________ MENU-LAYOUT END ______________________*/
+.menu_expanded{
+    height: 0;
+    overflow: hidden;
+    display: grid;
+    transition: .2s ease-in-out;
+}
+.menu_expanded-img{
+    margin-right: 15px;
+}
+.expanded-features:focus-within > .menu_expanded , .expanded-company:focus-within > .menu_expanded{
+    padding-left: 15px;
+    padding-top: 30px;
+    gap: 20px;
+    height: 200px;
+    transition: .2s ease-in-out;
+}
+/*______________________ MENU-CHECKBOX STAR ______________________*/
+#menu_checkbox:checked ~ nav.nav{
+    padding: 30px;
+    padding-top: 70px;
+    padding-bottom: 0;
     position: absolute;
     background-color: white;
     top: 0;
@@ -53,6 +105,16 @@ header{
     opacity: .5; 
     transition: width 0s ease-in-out;
 }
+#menu_checkbox:checked ~ label.button_open_menu{
+    z-index: -1;
+    transform: scale(0);
+    transition: .2s ease-in-out;
+}
+#menu_checkbox:checked ~ label.button_close_menu{
+    display: grid;
+
+}
+/*______________________ MENU-CHECKBOX END ______________________*/
 .button_nav{
     position: absolute;
     top: 20px;
@@ -64,18 +126,11 @@ header{
     transform: scale(1);
     transition: .2s ease-in-out;
 }
-#menu_checkbox:checked ~ label.button_menu{
-    z-index: -1;
-    transform: scale(0);
-    transition: .2s ease-in-out;
-}
-#menu_checkbox:checked ~ label.button_close_menu{
-    display: grid;
 
-}
-.button_menu{
+.button_open_menu{
     display: grid;  
 }
+
 /*________________________________________ HEADER END ________________________________________*/
 .banner{
     width: 100vw;

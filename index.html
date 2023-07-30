@@ -15,7 +15,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body onload="activar()">
   <main class="main">
     <header class="header">
       <div class="logo">
@@ -23,17 +23,42 @@
       </div>
       <input type="checkbox" class="checkbox" id="menu_checkbox">
       <div class="backgroung_menu"></div>
-      <label for="menu_checkbox" class="button_nav button_menu button_nav_activo"><img src="images/icon-menu.svg" alt=""></label>
-      <label for="menu_checkbox" class="button_nav button_close_menu"><img src="images/icon-close-menu.svg" alt=""></label>
-      <nav class="nav-menu">
-        <ul>
-          <li>Features</li>
-          <li>Company</li>
-          <li>Careers</li>
-          <li>About</li>
-        </ul>
-        <div class="button" id="button_login">Login</div>
-        <div class="button" id="button_register">Register</div>
+      <label for="menu_checkbox" class="button_nav button_open_menu user-select-none"><img src="images/icon-menu.svg" alt=""></label>
+      <label for="menu_checkbox" class="button_nav button_close_menu user-select-none"><img src="images/icon-close-menu.svg" alt=""></label>
+      <nav class="nav">
+        <div class="nav-content">
+          <div class="nav-menu user-select-none">
+            <div class="option_menu">
+              <div class="expanded-features" tabindex="1">Features <span><img src="images/icon-arrow-down.svg" alt=""></span>
+                  <ul class="menu_expanded">
+                    <li><img class="menu_expanded-img" src="images/icon-todo.svg" alt=""><label>Todo List</label></li>
+                    <li><img class="menu_expanded-img" src="images/icon-calendar.svg" alt=""><label>Calendar</label></li>
+                    <li><img class="menu_expanded-img" src="images/icon-reminders.svg" alt=""><label>Reminders</label></li>
+                    <li><img class="menu_expanded-img" src="images/icon-planning.svg" alt=""><label>Planning</label></li>
+                  </ul>
+              </div> 
+            </div>
+            <div class="option_menu">
+              <div class="expanded-company" tabindex="1">Company <span><img src="images/icon-arrow-down.svg" alt=""></span>
+                <ul class="menu_expanded" id="expanded-company">
+                  <li>History</li>
+                  <li>Our Team</li>
+                  <li>Blog</li>
+                </ul>
+              </div>
+            </div>
+            <div class="option_menu">Careers</div>
+            <div class="option_menu">About</div>
+          </div>
+          <div class="menu_button">
+            <input type="radio" class="checkbox radio_menu_button_login" id="radio-login" name="radio_menu_button">
+            <input type="radio" class="checkbox radio_menu_button_register" id="radio-register" name="radio_menu_button">
+            <label for="radio-login" class="button user-select-none" id="button_login">Login</label>
+            <label for="radio-register" class="button user-select-none" id="button_register">Register</label>
+          </div>
+
+        </div>
+
       </nav>
     </header>
     <div class="banner">
@@ -56,6 +81,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-  <script src="./main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
