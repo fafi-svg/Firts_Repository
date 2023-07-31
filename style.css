@@ -155,7 +155,8 @@ article p{
     margin: auto;
     padding: 15px 25px;
     border-radius: 10px;
-    
+    border: 1px solid;
+    border-color: black;
 }
 .footer{
     display: flex;
@@ -165,6 +166,44 @@ article p{
 }
 /*________________________________________ MEDIA-QUERY ________________________________________*/
 @media screen and (min-width:735px) {
+    .main{
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "article banner"
+        "footer banner"
+        ;
+        grid-template-columns: 50%   50%;
+        grid-template-rows: max-content auto max-content;
+        margin: auto;
+    }
+    .header{
+        grid-area: header;
+    }
+    .banner{
+        width: 40vw;
+        grid-area: banner;
+    }
+    .article{
+        text-align: start;
+        grid-area: article;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 25%;
+    }
+    .article h1{
+        font-size: 4rem;
+    }
+    .footer{
+        flex-wrap: wrap;
+        grid-area: footer;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .button_learn{
+        height: 45px;
+        margin: 0;
+    }
     /*____________________ HEADER START ____________________*/
     .mobile_design{
         display: none;
