@@ -6,9 +6,13 @@
 }
 body{
     font-family: 'Epilogue', sans-serif;
+    background-color:hsl(0, 0%, 98%)
 }
 .user-select-none{
     user-select: none;
+}
+.cursor_pointer{
+    cursor: pointer;
 }
 /*________________________________________ HEADER START ________________________________________*/
 header{
@@ -33,6 +37,7 @@ header{
     background-color: white;
     height: 100vh;
     transition: width 0s ease-in-out;
+    background-color:hsl(0, 0%, 98%)
     
 }
 /*______________________ MENU-LAYOUT STAR ______________________*/
@@ -157,6 +162,12 @@ article p{
     border-radius: 10px;
     border: 1px solid;
     border-color: black;
+    transition: background-color .2s ease-in-out;
+}
+.button_learn:hover{
+    background-color: white;
+    transition: background-color .5s ease-in-out;
+    color: black;
 }
 .footer{
     display: flex;
