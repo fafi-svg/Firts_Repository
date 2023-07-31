@@ -27,7 +27,7 @@ header{
     width: 0;
 }
 .nav{
-    overflow: hidden;
+    overflow: auto;
     color: hsl(0, 0%, 41%);
     z-index: 10;
     width: 0px;
@@ -91,7 +91,6 @@ header{
 #menu_checkbox:checked ~ nav.nav{
     padding: 30px;
     padding-top: 70px;
-    padding-bottom: 0;
     position: absolute;
     background-color: white;
     top: 0;
@@ -210,6 +209,7 @@ article p{
         grid-area: footer;
         padding-left: 15%;
         padding-right: 15%;
+        align-items: end;
     }
     .button_learn{
         height: 45px;
@@ -240,7 +240,6 @@ article p{
         gap: 35px;
         display: grid;
         grid-template-columns: max-content auto;
-       
     }
     .menu_button .button{
         width: 150px;
