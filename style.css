@@ -1,3 +1,6 @@
+:root{
+
+}
 *{
     margin: 0;
     padding: 0;
@@ -17,7 +20,7 @@ body{
 /*________________________________________ HEADER START ________________________________________*/
 header{
     display: flex;
-    padding: 20px;
+    padding: 20px 35px;
 }
 .checkbox{
     display: none;
@@ -80,6 +83,10 @@ header{
 .menu_expanded-img{
     margin-right: 15px;
 }
+#expanded-company li{
+    height: max-content;
+    padding: 5px 0px;
+}
 .expanded-features:focus-within > .menu_expanded , .expanded-company:focus-within > .menu_expanded{
     padding-left: 15px;
     padding-top: 30px;
@@ -87,36 +94,41 @@ header{
     height: 200px;
     transition: .2s ease-in-out;
 }
+.expanded-features:focus-within, .expanded-company:focus-within{
+    cursor: default;
+}
 /*______________________ MENU-CHECKBOX STAR ______________________*/
-#menu_checkbox:checked ~ nav.nav{
-    padding: 30px;
-    padding-top: 70px;
-    position: absolute;
-    background-color: white;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    transition: width .2s ease-in-out;
-}
-#menu_checkbox:checked ~ div.backgroung_menu{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    opacity: .5; 
-    transition: width 0s ease-in-out;
-}
-#menu_checkbox:checked ~ label.button_open_menu{
-    z-index: -1;
-    transform: scale(0);
-    transition: .2s ease-in-out;
-}
-#menu_checkbox:checked ~ label.button_close_menu{
-    display: grid;
-
+@media screen and (max-width:900px) {
+    #menu_checkbox:checked ~ nav.nav{
+        padding: 30px;
+        padding-top: 70px;
+        position: absolute;
+        background-color: white;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        transition: width .2s ease-in-out;
+    }
+    #menu_checkbox:checked ~ div.backgroung_menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+        opacity: .5; 
+        transition: width 0s ease-in-out;
+    }
+    #menu_checkbox:checked ~ label.button_open_menu{
+        z-index: -1;
+        transform: scale(0);
+        transition: .2s ease-in-out;
+    }
+    #menu_checkbox:checked ~ label.button_close_menu{
+        display: grid;
+    
+    }
 }
 /*______________________ MENU-CHECKBOX END ______________________*/
 .button_nav{
@@ -148,9 +160,13 @@ header{
     display: grid;
     gap: 25px;
 }
-article p{
+.article p{
     color: hsl(0, 0%, 41%);
     line-height: 1.5;
+    font-size: 1.2rem;
+}
+.article h1{
+    font-size: 4rem;
 }
 .button_learn{
     color: hsl(0, 0%, 98%);
@@ -175,7 +191,8 @@ article p{
     align-items: center;
 }
 /*________________________________________ MEDIA-QUERY ________________________________________*/
-@media screen and (min-width:735px) {
+
+@media screen and (min-width:900px) {
     .main{
         display: grid;
         grid-template-areas: 
@@ -191,18 +208,24 @@ article p{
         grid-area: header;
     }
     .banner{
-        width: 40vw;
+        width: 30vw;
         grid-area: banner;
+    }
+    .banner img{
+        min-width: 400px;
     }
     .article{
         text-align: start;
         grid-area: article;
         padding-left: 15%;
-        padding-right: 15%;
+        padding-right: 5%;
         padding-top: 25%;
     }
     .article h1{
-        font-size: 4rem;
+        font-size: 5rem;
+    }
+    .article p{
+        font-size: 1.5rem;
     }
     .footer{
         flex-wrap: wrap;
@@ -225,6 +248,9 @@ article p{
         position: relative;
         overflow: visible;
     }
+    .nav-menu{
+        gap: 15%;
+    }
     .nav-content div.menu_button,.nav-content div.nav-menu, .nav-content{
         display: flex;
         height: auto;
@@ -237,14 +263,14 @@ article p{
     }
     header{
         align-items: center;
-        gap: 35px;
+        gap: 5%;
         display: grid;
         grid-template-columns: max-content auto;
     }
     .menu_button .button{
-        width: 150px;
-        height: 100%;
+        width: 60px;
         padding: 10px 20px;
+        box-sizing:content-box;
     }
     .logo{
         display: grid;
@@ -256,6 +282,9 @@ article p{
         box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         top: 40px;
+    }
+    .expanded-company , .expanded-features{
+        min-width: 90px;
     }
     .expanded-features:focus-within > .menu_expanded , .expanded-company:focus-within > .menu_expanded{
         padding: 20px 20px;
