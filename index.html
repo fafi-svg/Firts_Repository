@@ -30,7 +30,7 @@
           <div class="nav-menu user-select-none">
             <div class="option_menu">
               <div class="expanded-features cursor_pointer" tabindex="1">Features <span><img src="images/icon-arrow-down.svg" alt=""></span>
-                  <ul class="menu_expanded  ">
+                  <ul class="menu_expanded curso_pointer_default" id="menu_expanded_features">
                     <li class="cursor_pointer"><img class="menu_expanded-img" src="images/icon-todo.svg" alt=""><label class="cursor_pointer">Todo List</label></li>
                     <li class="cursor_pointer"><img class="menu_expanded-img" src="images/icon-calendar.svg" alt=""><label class="cursor_pointer">Calendar</label></li>
                     <li class="cursor_pointer"><img class="menu_expanded-img" src="images/icon-reminders.svg" alt=""><label class="cursor_pointer">Reminders</label></li>
@@ -40,7 +40,7 @@
             </div>
             <div class="option_menu">
               <div class="expanded-company cursor_pointer" tabindex="1">Company <span><img src="images/icon-arrow-down.svg" alt=""></span>
-                <ul class="menu_expanded" id="expanded-company">
+                <ul class="menu_expanded curso_pointer_default" id="menu_expanded_company">
                   <li class="cursor_pointer">History</li>
                   <li class="cursor_pointer">Our Team</li>
                   <li class="cursor_pointer">Blog</li>
@@ -59,9 +59,10 @@
         </div>
       </nav>
     </header>
-    <div class="banner user-select-none">
-      <img class="user-select-none" src="images/image-hero-desktop.png" alt="">
-    </div>
+    <picture class="banner user-select-none">
+      <source media="(max-width:900px)" srcset="images/image-hero-mobile.png">
+      <img src="images/image-hero-desktop.png" alt="">
+    </picture>
     <article class="article">
       <h1>Make remote work</h1>
       <p>Get your team in sync, no matter your location. Streamline processes, 
@@ -69,10 +70,10 @@
         <div class="button_learn cursor_pointer user-select-none">Learn more</div>
     </article>
     <footer class="footer">
-      <img  class="user-select-none" src="images/client-databiz.svg" alt="">
-      <img  class="user-select-none" src="images/client-audiophile.svg" alt="">
-      <img  class="user-select-none" src="images/client-maker.svg" alt="">
-      <img  class="user-select-none" src="images/client-meet.svg" alt="">
+      <img class="user-select-none" src="images/client-audiophile.svg" alt="">
+      <img class="user-select-none" src="images/client-databiz.svg" alt="">
+      <img class="user-select-none" src="images/client-maker.svg" alt="">
+      <img class="user-select-none" src="images/client-meet.svg" alt="">
     </footer>
   </main>
   <div class="attribution">
